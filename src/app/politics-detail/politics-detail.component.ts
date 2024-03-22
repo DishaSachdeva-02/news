@@ -3,11 +3,12 @@ import { news } from '../news';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { NewsdataService } from '../newsdata.service';
-
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-politics-detail',
   standalone: true,
-  imports: [],
+  imports: [NgIf,FormsModule],
   templateUrl: './politics-detail.component.html',
   styleUrl: './politics-detail.component.css'
 })
@@ -24,4 +25,11 @@ export class PoliticsDetailComponent {
    goback(){
     this.location.back();
    }
+   save(): void {
+    if (this.selectednews) {
+      this.newsdataservice
+        .updatenews(this.selectednews)
+        .subscribe(() => this.goback());
+    }
+  }
 }

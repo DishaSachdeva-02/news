@@ -9,5 +9,10 @@
     <div>{{selectednews?.description}}</div>
     <br>
     <button type="button" (click)="goback()">Back</button>
+    <br>
+    <div *ngIf="selectednews">
+        <input type="text" [(ngModel)]="selectednews.description">
+        <button type="button" (click)="save()">Save</button>
+    </div>
     <hr>
 </div>

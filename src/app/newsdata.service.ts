@@ -30,5 +30,8 @@ export class NewsdataService {
     }
     return this.http.get<news[]>(`${this.url}/?titles=${term}`);
   }
+  updatenews(news: news): Observable<any> {
+    return this.http.put(this.url, news, this.httpOptions);
+  }
 }
 
