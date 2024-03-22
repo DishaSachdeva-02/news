@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<header>
+  <nav>
+   <div class="main">
+    <a routerLink="/finance">Finance</a>
+    <a routerLink="/sports">Sports</a>
+    <a routerLink="/politics">Politics</a>
+    <button type="button"><a routerLink="/addnews">Add New News</a></button>
+    <div>
+      <label for="search">Search..</label>
+      <input type="text" id="search" #newssearch (input)="search(newssearch.value)">
+    </div>
+   </div>
+  </nav>
+</header>
+<ul>
+  <li *ngFor="let ns of news$ | async">
+    
+    <a routerLink="/{{ns.cateogry}}/{{ns.id}}">{{ns.titles}}</a>
+    <p>{{ns.description}}</p>
+  </li>
+</ul>
+<router-outlet></router-outlet>

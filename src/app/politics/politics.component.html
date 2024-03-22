@@ -1,0 +1,13 @@
+<div *ngIf="newsdisplay">
+   <ul>
+     <li *ngFor="let news of newsdisplay">
+        <div><a routerLink="/politics/{{news.id}}"><b><i><u>{{news.titles}}</u></i></b></a></div>
+        <br>
+        <div>{{news.description}}</div>
+        <br>
+        <button type="button" (click)="delete(news)">Delete</button>
+        <hr>
+        <br>
+     </li>
+   </ul>
+</div>

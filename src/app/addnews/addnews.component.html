@@ -1,0 +1,29 @@
+<div>
+    <div>Add New News</div>
+    <br>
+    <label for="newstit">Title : </label>
+    <input type="text" #newstit id="newstit" required>
+    <br>
+    <br>
+    <label for="newscat">Cateogry: </label>
+    <select #newscat id="newscat" required>
+        <option>politics</option>
+        <option>finance</option>
+        <option>sports</option>
+    </select>
+    <br>
+    <br>
+    <label for="newsdes">Description: </label>
+    <textarea #newsdes id="newsdes" required></textarea>
+    <br>
+    <br>
+    <label for="newsauth">Author: </label>
+    <input type="text" #newsauth id="newsauth" required>
+    <br>
+    <br>
+    <label for="newsdate">Publish Date: </label>
+    <input type="string" #newsdate id="newsdate" required>
+    <br>
+    <br>
+    <button type="button" (click)="add(newstit.value,newscat.value,newsauth.value,newsdes.value,newsdate.value) ; newstit.value='';newscat.value='' ;newsauth.value='' ;newsdate.value='' ;newsdes.value='' ">Add</button>
+</div>
