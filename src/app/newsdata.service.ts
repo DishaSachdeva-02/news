@@ -28,7 +28,7 @@ export class NewsdataService {
     if(!term.trim()){
       return of([]);
     }
-    return this.http.get<news[]>(`${this.url}/?titles=${term}`);
+    return this.http.get<news[]>(`${this.url}/?titles=${term}&description=${term}`);
   }
   updatenews(news: news): Observable<any> {
     return this.http.put(this.url, news, this.httpOptions);
